@@ -2,6 +2,8 @@
 
 My Alacritty configuration for macOS, with a translucent window, Fish login shell, Catppuccin Macchiato and tmux/Neovim keybindings.
 
+![](img/alacritty-tmux-vim.png)
+
 ```sh
 git clone git@github.com:aharoJ/alacritty.git ~/.config/alacritty
 alacritty
