@@ -1,109 +1,60 @@
 # Alacritty
-My Alacritty config file is the result of hours of love and dedication, carefully crafted to enhance my terminal experience. With a color scheme imported from the Gruvbox Material theme, and a combination of FiraCode Nerd Font and Hack Nerd Font for my font configuration, I've ensured that my terminal looks and feels great. I've also enabled clickable URLs and configured my cursor to suit my preferences. Additionally, I've added visual bell animation and set the window dimensions, position, and decorations to my liking. The config also includes options for clipboard, line indicator and scrolling. I've also added live config reload feature to make it easy to make changes on the go. Overall, this config is tailored to my specific needs and preferences and I am excited to share it with others!
 
+My Alacritty configuration for macOS, with a translucent window, Fish login shell, Catppuccin Macchiato and tmux/Neovim keybindings.
 
-![](z/alacritty-tmux-vim.png)
-
----
-
-# Requirement
-.
-.
-.
-Install `Homebrew`
-```brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```sh
+git clone git@github.com:aharoJ/alacritty.git ~/.config/alacritty
+alacritty
 ```
 
-...`optional but STRONGLY recommended`
-- ### [starship](https://github.com/aharo24/dot-starship)
-- ### [vivaldi](https://github.com/aharo24/dot-vivaldi)
+Alacritty reads `~/.config/alacritty/alacritty.toml`; its theme imports use that directory. Install FiraCode Nerd Font and AnonymicePro Nerd Font separately, as the current font settings request them. The bundled Hack, Lekton and ComicShannsMono font files retain their full upstream license and copyright metadata. FiraCode, DaddyTimeMono and Monofur binaries remain private because the source copies lack their required companion/full license notices. No font bytes were modified.
 
+`themes/` also contains the other Catppuccin palettes, Kanagawa Wave and the older gruvbox-material YAML palette. `backup/` keeps the original saved configurations. Older YAML schemas, font names and imports may require their original Alacritty versions and dependencies.
 
-# Installation with Homebrew
+Annotated tags preserve these configurations, oldest first. The current setup is main and `v0.12.0`. A `without` list records the source files omitted from that public snapshot.
 
-...Step 1
-Install alacritty: 
-``` brew
-brew install alacritty
+- `v0.1.0` — Original public gruvbox YAML (2023-01-27).
+- `v0.2.0` — old_dotfiles SFMono YAML (2023-07-31).
+- `v0.3.0` — Saved SFMono YAML configuration (2023-08-27).
+- `v0.4.0` — Saved YAML keybinding reference (2024-03-09).
+- `v0.5.0` — Last active YAML generation (2024-04-22).
+- `v0.6.0` — Saved YAML version 0.0.1 (2024-04-22).
+- `v0.7.0` — Saved YAML version 0.0.2 (2024-04-22).
+- `v0.8.0` — Saved YAML version 0.0.3 (2024-04-22).
+- `v0.9.0` — Saved TOML reference (2024-04-22).
+- `v0.10.0` — Saved TOML version 0.0.1 (2024-04-22).
+- `v0.11.0` — TOML before the general section (2024-12-05). Without fonts/DaddyTimeMonoNerdFont-Regular.ttf, fonts/FiraCodeNerdFont-Bold.ttf, fonts/FiraCodeNerdFont-Light.ttf, fonts/FiraCodeNerdFont-Medium.ttf, fonts/FiraCodeNerdFont-Regular.ttf, fonts/FiraCodeNerdFont-Retina.ttf, fonts/FiraCodeNerdFont-SemiBold.ttf, fonts/MonofurNerdFont-Bold.ttf, fonts/MonofurNerdFont-Italic.ttf, fonts/MonofurNerdFont-Regular.ttf, scripts/toggle_blur.py.
+- `v0.12.0` — Current general-section TOML (2026-10-18). Without .DS_Store, fonts/.DS_Store, fonts/DaddyTimeMonoNerdFont-Regular.ttf, fonts/FiraCodeNerdFont-Bold.ttf, fonts/FiraCodeNerdFont-Light.ttf, fonts/FiraCodeNerdFont-Medium.ttf, fonts/FiraCodeNerdFont-Regular.ttf, fonts/FiraCodeNerdFont-Retina.ttf, fonts/FiraCodeNerdFont-SemiBold.ttf, fonts/MonofurNerdFont-Bold.ttf, fonts/MonofurNerdFont-Italic.ttf, fonts/MonofurNerdFont-Regular.ttf, themes/.DS_Store, themes/catppuccin/.DS_Store.
+
+The configuration keeps its original 2023 MIT license. Bundled fonts retain their own licenses: Hack uses MIT and Bitstream Vera, Lekton uses SIL OFL 1.1, and ComicShannsMono uses MIT.
+
+[Catppuccin](https://github.com/catppuccin/alacritty), [Kanagawa](https://github.com/rebelot/kanagawa.nvim) and [gruvbox-material](https://github.com/sainnhe/gruvbox-material) are upstream theme projects.
+
+<details>
+<summary>Catppuccin license notice</summary>
+
+```text
+MIT License
+
+Copyright (c) 2021 Catppuccin
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```
 
-
-...Step 2 
-Copy file:
-my file to  `~/.config/alacritty/alacritty.yml`
-
-#### [my alacritty file](https://github.com/aharo24/dot-alacritty/blob/main/resources/alacritty.yml)
-
-
----
-
-### Shell Support
-(I use [fish shell](https://fishshell.com/))
-
-- Bash
-- Cmd
-- Elvish
-- Fish
-- Ion
-- Nushell
-- PowerShell
-- Tcsh
-- Xonsh
-- Zsh
-
-
-### color-scheme
-![](z/alacritty-my-gruvbox.png)
-
-### [My colorscheme for alacritty in case you want to use it](https://github.com/aharo24/dot-alacritty/blob/main/resources/aharo24-gruvbox.yml)
-
-
-
-# [dotfiles](https://github.com/aharo24/opensource/tree/main/dotfiles)
-- Please 
-	- be patient (slowly merging all dotfiles for public use)
-
-- [alacritty ✅](https://github.com/aharo24/dot-alacritty)
-- done
-- exa
-- fish-abbreviation-tips
-- fish
-- flameshot
-- keycastr 
-- obsidian
-- raycast
-- rectangle
-- spunge
-- [starship ✅](https://github.com/aharo24/dot-starship)
-- sublime
-- [vivaldi  ✅](https://github.com/aharo24/dot-vivaldi)
-- tmux
-- z
-
-# [Contact Info](https://github.com/aharo24/opensource)
-
-Feel free to follow me on twitter: [@aharo24](https://www.twitter.com/aharo24)!
-
-email me with any questions, improvements, bugs, or just to chat.
-io.aharo24@gmail.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</details>
